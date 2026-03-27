@@ -5,11 +5,11 @@ def main(page: ft.Page):
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
     def change_bg_color(e):
-        page.bgcolor = f"#{r_slider.value:02x}{g_slider.value:02x}{b_slider.value:02x}"
+        pass
 
-    r_slider = ft.Slider(key = "r", min = 0, max = 255, label = "R")
-    g_slider = ft.Slider(key = "g", min = 0, max = 255, label = "G")
-    b_slider = ft.Slider(key = "b", min = 0, max = 255, label = "B")
+    r_slider = ft.Slider(key = "r", min = 0, max = 255, label = "R", on_change = change_bg_color)
+    g_slider = ft.Slider(key = "g", min = 0, max = 255, label = "G", on_change = change_bg_color)
+    b_slider = ft.Slider(key = "b", min = 0, max = 255, label = "B", on_change = change_bg_color)
 
     page.add(r_slider, g_slider, b_slider)
 
