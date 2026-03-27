@@ -9,13 +9,16 @@ def main(page: ft.Page):
         g = int(g_slider.value)
         b = int(b_slider.value)
 
+        header.value = f"Adjust the sliders to change the color of the background.\n{r}, {g}, {b}"
         page.bgcolor = f"#{r:02x}{g:02x}{b:02x}"
 
+    header = ft.Text("Adjust the sliders to change the color of the background.\n0, 0, 0")
     r_slider = ft.Slider(key = "r", min = 0, max = 255, value = 0, on_change = change_bg_color)
     g_slider = ft.Slider(key = "g", min = 0, max = 255, value = 0, on_change = change_bg_color)
     b_slider = ft.Slider(key = "b", min = 0, max = 255, value = 0, on_change = change_bg_color)
 
     page.add(
+        header,
         ft.Row(controls = [ft.Text("R"), r_slider], alignment = page.vertical_alignment),
         ft.Row(controls = [ft.Text("G"), g_slider], alignment = page.vertical_alignment),
         ft.Row(controls = [ft.Text("B"), b_slider], alignment = page.vertical_alignment)
